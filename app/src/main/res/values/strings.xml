@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Proyecto Dispositivos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search">Buscar</string>
+    <string name="titulo">AppAnime</string>
+    <string name="intro">¡Saludos, maestro otaku! ¡Es genial tenerte de vuelta!</string>
+    <string name="correo">Correo</string>
+    <string name="correoEjemplo">example@email.com</string>
+    <string name="password">Contraseña</string>
+    <string name="botonIngresar">Iniciar sesión</string>
+    <string name="conectese">O usa tu cuenta de Google para ingresar</string>
+    <string name="sinCuenta">¿No tienes una cuenta?</string>
+    <string name="registrese">Crear una cuenta</string>
+    <string name="recuperar">Recuperar Contraseña</string>
+    <string name="registrar">Registro</string>
+    <string name="recuperacion">Ingresa tu correo para recuperar tu contraseña</string>
+    <string name="registro">¡Bienvenido a Marvel Fans!</string>
+    <string name="ingresa1">Ingresa tu correo electrónico:</string>
+    <string name="ingresa2">Crea una contraseña de más de 8 caracteres:</string>
+    <string name="revisa">Revisa tu correo y recupera tu contraseña</string>
+    <string name="ingresaCorreo">Ingresa tu correo</string>
+    <string name="google">Iniciar sesión con Google</string>
+    <string name="regresar">Regresar</string>
+    <string name="inicio">Inicio</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="busca">Buscar</string>
+    <string name="buscar">Buscar Personaje</string>
+    <string name="personajes">Personajes</string>
+    <string name="favs">Mis Personajes Favoritos de Marvel</string>
+    <string name="camara">Cámara</string>
+    <string name="biom">Autenticación Biométrica</string>
+    <string name="not">Notificaciones</string>
+    <string name="progress">Progress</string>
+    <string name="txt_user">Usuario</string>
+    <string name="txt_password">Contraseña</string>
+
+    <!--TextView-->
+    <string name="txt_login">Login</string>
+    <string name="txt_sign_up">Registro de Usuarios</string>
+    <string name="txt_name">Nombre</string>
+    <string name="txt_last_name">Apellido</string>
+    <string name="txt_email">Correo Electronico</string>
+    <string name="txt_pass">Contraseña</string>
+    <string name="txt_pass_confirm">Confirmar Contraseña</string>
+    <string name="txt_congratulation">Felicidades.</string>
+    <string name="txt_title_product">Nombre del Producto</string>
+    <string name="txt_price_product">Precio del Producto</string>
+    <string name="txt_description_product">Descripcion del Producto</string>
+    <string name="txt_confirm_text">Ahora puedes acceder a nuestra Aplicacion. Pulsa el Boton para seguir con la experiencia de nuestra aplicacion</string>
+    <string name="txt_confirm_pay">Compra Existosa</string>
+    <string name="txt_confirm_message">Ahora tu compra esta en proceso de ser entregada, si deseas puedes ver que mas productos te interesa. Te damos el tiempo que tu deseas</string>
+
+    <!--Button-->
+    <string name="btn_login_text">Ingresar</string>
+    <string name="btn_sign_up_text">Registrarse</string>
+    <string name="btn_exit_text">Salir</string>
+    <string name="btn_continue">Continuar</string>
+
+    <!--EditText-->
+    <string name="edtxt_user">Ingrese el Usuario</string>
+    <string name="edtxt_password">Ingrese la Clave</string>
+    <string name="anime_image">Imagen del Anime</string>
+    <string name="characters_image">Imagen del Personaje</string>
+
+</resources>

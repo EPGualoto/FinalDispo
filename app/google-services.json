@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "143696471699",
+    "project_id": "pfinaldm",
+    "storage_bucket": "pfinaldm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143696471699:android:9853a2ca51b80944834f66",
+        "android_client_info": {
+          "package_name": "com.gualoto.pfinaldm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143696471699-ls2scim9epfvb8aocuc9043m8qasj9tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDODj-ts_z7l_tya2iZ0cry1janRaUAg7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143696471699-ls2scim9epfvb8aocuc9043m8qasj9tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

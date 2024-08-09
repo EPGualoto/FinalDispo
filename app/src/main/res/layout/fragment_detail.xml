@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".ui.fragments.main.DetailFragment"
+    android:background="@color/white"
+    android:id="@+id/linear">
+    <TextView
+        android:id="@+id/textIdAnime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Id Anime"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp"
+        />
+    <ImageView
+        android:id="@+id/imgAnime"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/txtTitleEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Title english"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/txtSypnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Sypnosis"
+        android:gravity="left"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/red"
+        android:layout_height="50dp"
+        android:text="Refrescar" />
+
+
+
+</LinearLayout>

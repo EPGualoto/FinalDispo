@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tamanio">40dp</dimen>
+    <dimen name="marginStartEnd">30dp</dimen>
+    <dimen name="btn_height">48dp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+
+    <dimen name="btn_standard">48dp</dimen>
+
+    <dimen name="txt_name_size_title_1">24sp</dimen>
+    <dimen name="txt_name_size_title_2">20sp</dimen>
+    <dimen name="txt_name_size_title_3">18sp</dimen>
+    <dimen name="txt_name_size_title_4">16sp</dimen>
+    <dimen name="txt_name_size_title_5">14sp</dimen>
+    <dimen name="txt_size_text_1">32sp</dimen>
+    <dimen name="txt_size_text_2">28sp</dimen>
+    <dimen name="txt_size_text_3">24sp</dimen>
+    <dimen name="txt_size_text_4">20sp</dimen>
+</resources>

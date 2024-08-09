@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/menuFragment2">
+
+    <fragment
+        android:id="@+id/listFrament"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="idAnime"
+            app:argType="integer"
+            android:defaultValue="-99" /></fragment>
+    <fragment
+        android:id="@+id/menuFragment2"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment2_to_listFrament"
+            app:destination="@id/listFrament" />
+        <action
+            android:id="@+id/action_menuFragment2_to_imageFragment"
+            app:destination="@id/imageFragment" />
+        <action
+            android:id="@+id/action_menuFragment2_to_animeFragment"
+            app:destination="@id/animeFragment" />
+        <action
+            android:id="@+id/action_menuFragment2_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.ImageFragment"
+        android:label="fragment_reco"
+        tools:layout="@layout/fragment_reco" />
+    <fragment
+        android:id="@+id/recoFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.RecoFragment"
+        android:label="RecoFragment" />
+    <fragment
+        android:id="@+id/animeFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.AnimeFragment"
+        android:label="AnimeFragment" >
+        <action
+            android:id="@+id/action_animeFragment_to_menuFragment2"
+            app:destination="@id/menuFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.CharactersFragment"
+        android:label="CharactersFragment" >
+        <action
+            android:id="@+id/action_charactersFragment_to_menuFragment2"
+            app:destination="@id/menuFragment2" />
+    </fragment>
+</navigation>
