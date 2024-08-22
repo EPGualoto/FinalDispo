@@ -4,9 +4,7 @@
     <dimen name="marginStartEnd">30dp</dimen>
     <dimen name="btn_height">48dp</dimen>
     <dimen name="text_size_18">18sp</dimen>
-
     <dimen name="btn_standard">48dp</dimen>
-
     <dimen name="txt_name_size_title_1">24sp</dimen>
     <dimen name="txt_name_size_title_2">20sp</dimen>
     <dimen name="txt_name_size_title_3">18sp</dimen>

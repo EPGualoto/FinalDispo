@@ -4,7 +4,7 @@
     <style name="btn_login">
         <item name="buttonStyle">@style/Widget.Material3.Button.ElevatedButton</item>
         <item name="backgroundTint">@color/hunter_green</item>
-        <item name="android:text">@string/btn_login_text</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textColor">@color/ivory</item>
         <item name="android:textSize">@dimen/txt_name_size_title_5</item>
         <item name="android:layout_width">150dp</item>
@@ -20,7 +20,6 @@
         <item name="android:buttonStyle">@style/Widget.Material3.Button.OutlinedButton</item>
         <item name="android:layout_width">180dp</item>
         <item name="android:layout_height">48dp</item>
-        <item name="android:text">@string/btn_sign_up_text</item>
         <item name="android:textColor">@color/hunter_green</item>
         <item name="android:fontFamily">@font/allerta</item>
         <item name="android:drawableLeft">@drawable/fondoanime</item>
@@ -34,7 +33,6 @@
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_margin">10dp</item>
         <item name="android:backgroundTint">@color/cerulean</item>
-        <item name="android:text">@string/btn_sign_up_text</item>
         <item name="android:textColor">@color/ivory</item>
         <item name="android:drawableTint">@color/ivory</item>
     </style>
@@ -44,60 +42,15 @@
         <item name="android:layout_width">130dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-        <item name="android:text">@string/btn_continue</item>
         <item name="android:textSize">@dimen/txt_name_size_title_3</item>
         <item name="android:textColor">@color/hunter_green</item>
         <item name="android:backgroundTint">@color/transparent</item>
         <item name="android:state_focused">true</item>
     </style>
 
-
-    <!--Estilos Imagenes-->
-    <style name="img_shape_login">
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <style name="img_shape_sign_up">
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <!--Estilos Textos-->
-    <style name="txt_confirm_congratulation">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:text">@string/txt_congratulation</item>
-        <item name="android:textSize">@dimen/txt_name_size_title_1</item>
-    </style>
-
-    <style name="txt_confirm_access">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:padding">20dp</item>
-        <item name="android:text">@string/txt_confirm_text</item>
-        <item name="android:textSize">@dimen/txt_name_size_title_2</item>
-    </style>
-
-    <style name="txt_confirm_pay">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:text">@string/txt_confirm_pay</item>
-        <item name="android:textSize">@dimen/txt_name_size_title_1</item>
-    </style>
-
-    <style name="txt_confirm_message">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:padding">20dp</item>
-        <item name="android:text">@string/txt_confirm_message</item>
-        <item name="android:textSize">@dimen/txt_name_size_title_2</item>
+    <style name="CustomShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Esto asegura que todas las esquinas estén completamente redondeadas -->
     </style>
 
 </resources>

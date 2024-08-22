@@ -1,5 +1,4 @@
 package com.gualoto.pfinaldm.data.network.repository
-
 import com.gualoto.pfinaldm.data.network.endpoints.JikanService
 
 

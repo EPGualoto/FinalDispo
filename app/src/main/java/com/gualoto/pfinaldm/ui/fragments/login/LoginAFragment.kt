@@ -22,17 +22,13 @@ import com.gualoto.pfinaldm.databinding.FragmentLoginaBinding
 import com.gualoto.pfinaldm.ui.activities.MainActivity
 import com.gualoto.pfinaldm.ui.core.ManageUIStates
 import com.gualoto.pfinaldm.ui.core.UIStates
-import com.gualoto.pfinaldm.ui.fragments.main.MenuFragment
+import com.gualoto.pfinaldm.ui.fragments.main.anime.AnimeGFragment
 import com.gualoto.pfinaldm.ui.viewmodels.login.LoginFragmentVM
 import java.util.concurrent.Executor
 
 class LoginAFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginaBinding
-    private lateinit var executor: Executor
-    private lateinit var biometricPrompt: BiometricPrompt
-    private lateinit var promptInfo: BiometricPrompt.PromptInfo
-    private lateinit var biometricManager: BiometricManager
     private lateinit var managerUIStates: ManageUIStates
     private val loginFragmentVM: LoginFragmentVM by viewModels()
     private lateinit var auth: FirebaseAuth
@@ -79,7 +75,7 @@ class LoginAFragment : Fragment() {
             startActivity(
                 Intent(
                     requireActivity(),
-                    MenuFragment::class.java
+                    AnimeGFragment::class.java
                 )
             )
             requireActivity().finish()

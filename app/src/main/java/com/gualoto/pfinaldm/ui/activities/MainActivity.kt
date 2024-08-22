@@ -1,51 +1,115 @@
 package com.gualoto.pfinaldm.ui.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AlertDialog
+import androidx.core.view.ViewCompat
 
-import androidx.navigation.fragment.NavHostFragment
 import com.gualoto.pfinaldm.R
-import com.gualoto.pfinaldm.ui.fragments.login.LoginAFragment
+import com.gualoto.pfinaldm.databinding.ActivityMainBinding
+import com.gualoto.pfinaldm.databinding.FragmentAnimeGBinding
+import com.gualoto.pfinaldm.ui.fragments.main.anime.AnimeGFragment
+import com.gualoto.pfinaldm.ui.fragments.main.anime.SearchFragment
+import com.gualoto.pfinaldm.ui.fragments.main.clubs.ClubSearchFragment
+import com.gualoto.pfinaldm.ui.fragments.main.news.NewsFragment
+import com.gualoto.pfinaldm.ui.fragments.main.perfil.PerfilFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
 
-    override fun onBackPressed() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.containerFragments) as? NavHostFragment
-        val fragment = currentFragment?.childFragmentManager?.fragments?.firstOrNull()
+        setImmersiveMode()
 
-        if (fragment is LoginAFragment) {
-            super.onBackPressed()
-        } else {
-            showLogoutConfirmationDialog()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initListeners()
+
+
+        // Cargar el fragmento inicial cambiar con la bienvenida
+        supportFragmentManager.beginTransaction()
+            .replace(binding.containerFragments.id, PerfilFragment())
+            .commit()
+
+
+        // Configura los Insets para el BottomNavigationView
+        ViewCompat.setOnApplyWindowInsetsListener(binding.bottomNavigation) { view, insets ->
+            insets
         }
     }
 
-    private fun showLogoutConfirmationDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Cerrar Sesión")
-            .setMessage("¿Quieres cerrar sesión?")
-            .setPositiveButton("Sí") { dialog, _ ->
-                dialog.dismiss()
-                logout()
+    private fun initListeners() {
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId){
+                R.id.item1 ->{
+                    val x = supportFragmentManager.beginTransaction()
+                    x.replace(binding.containerFragments.id, AnimeGFragment())
+                    x.commit()
+                    true
+                }
+                R.id.item2 -> {
+                    val x = supportFragmentManager.beginTransaction()
+                    x.replace(binding.containerFragments.id, ClubSearchFragment())
+                    x.commit()
+                    true
+                }
+                R.id.item3 -> {
+                    val x = supportFragmentManager.beginTransaction()
+                    x.replace(binding.containerFragments.id, SearchFragment())
+                    x.commit()
+                    true
+                }
+                R.id.item4 -> {
+                    val x = supportFragmentManager.beginTransaction()
+                    x.replace(binding.containerFragments.id, NewsFragment())
+                    x.commit()
+                    true
+                }
+                R.id.item5 ->{
+                    val x = supportFragmentManager.beginTransaction()
+                    x.replace(binding.containerFragments.id, PerfilFragment())
+                    x.commit()
+                    true
+                }
+
+                else -> false
             }
-            .setNegativeButton("No") { dialog, _ ->
-                dialog.dismiss()
-            }
-            .show()
+        }
     }
 
-    private fun logout() {
-        val sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE)
-        sharedPreferences.edit().clear().apply()
+    private fun setImmersiveMode() {
+        val decorView = window.decorView
+        decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
 
-        // Volver al fragmento de login
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.containerFragments, LoginAFragment())
-            .commit()
+        // Configura un listener para restaurar el modo inmersivo si cambia la visibilidad del sistema
+        decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                decorView.systemUiVisibility = (
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                or View.SYSTEM_UI_FLAG_FULLSCREEN
+                        )
+            }
+        }
     }
+
+    override fun onResume() {
+        super.onResume()
+        // Configura el modo inmersivo cada vez que la actividad se reanude
+        setImmersiveMode()
+    }
+
+
 }

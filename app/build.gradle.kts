@@ -48,6 +48,7 @@ android {
         viewBinding = true
         dataBinding = true
     }
+
 }
 
 dependencies {
@@ -102,6 +103,12 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
     implementation("com.google.firebase:firebase-analytics")
 
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // Lifecycle
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.3")
 
     //FIRESTORE
     implementation("com.google.firebase:firebase-firestore")

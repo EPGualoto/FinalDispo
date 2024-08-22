@@ -9,32 +9,35 @@
         android:id="@+id/loginFragment"
         android:name="com.gualoto.pfinaldm.ui.fragments.login.LoginAFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_logina" >
+        tools:layout="@layout/fragment_logina">
         <action
             android:id="@+id/action_loginFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment2"
             app:destination="@id/registerFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_MFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.gualoto.pfinaldm.ui.fragments.login.RegisterAFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_registera" />
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.gualoto.pfinaldm.ui.fragments.main.MenuFragment"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
     <fragment
         android:id="@+id/registerFragment2"
         android:name="com.gualoto.pfinaldm.ui.fragments.login.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.anime.AnimeGFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_m">
+        <action
+            android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 

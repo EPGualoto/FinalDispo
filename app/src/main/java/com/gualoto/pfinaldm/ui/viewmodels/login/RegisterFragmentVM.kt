@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gualoto.pfinaldm.logic.usercase.login.CreateUserWithNameAndPassword
+import com.gualoto.pfinaldm.logic.login.CreateUserWithNameAndPassword
 import com.gualoto.pfinaldm.ui.core.UIStates
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

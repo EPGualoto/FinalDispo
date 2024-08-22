@@ -3,8 +3,8 @@ package com.gualoto.pfinaldm.ui.viewmodels.login
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gualoto.pfinaldm.logic.usercase.login.GetUserByEmailAndPasswordUserCase
-import com.gualoto.pfinaldm.logic.usercase.login.SaveUserFireStoreUserCase
+import com.gualoto.pfinaldm.logic.login.GetUserByEmailAndPasswordUserCase
+import com.gualoto.pfinaldm.logic.login.SaveUserFireStoreUserCase
 import com.gualoto.pfinaldm.ui.core.UIStates
 import com.gualoto.pfinaldm.ui.entities.users.UserLogin
 import kotlinx.coroutines.delay

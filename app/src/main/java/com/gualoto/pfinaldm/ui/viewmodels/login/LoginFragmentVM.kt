@@ -7,10 +7,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
-import com.gualoto.pfinaldm.logic.usercase.login.GetUserWithNameAndPassword
+import com.gualoto.pfinaldm.logic.login.GetUserWithNameAndPassword
 import com.gualoto.pfinaldm.ui.core.UIStates
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LoginFragmentVM:ViewModel() {

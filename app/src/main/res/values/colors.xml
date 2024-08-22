@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
+    <color name="background_color">#F5F5F5</color>
     <color name="my_primary">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="my_secundary">#0A69B5</color>
     <color name="green">#70BC19</color>
     <color name="purple">#673AB7</color>
@@ -16,9 +16,9 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-   <color name="red">#F44336</color>
+    <color name="red">#F44336</color>
     <color name="rosa">#ffc8dd</color>
-   <color name="morado">#cdb4db</color>
+    <color name="morado">#cdb4db</color>
     <color name="morado2">#dee2ff</color>
     <color name="morado3">#D08DDB</color>
     <color name="morado4">#cdb4db</color>
@@ -44,9 +44,6 @@
     <color name="ravenclaw_bronze">#A5A5A5</color>
     <color name="hufflepuff_yellow">#F7E300</color>
     <color name="hufflepuff_black">#3D3D3D</color>
-
-
-    <!--Colores Especiales-->
     <color name="paynes_gray">#536878</color>
     <color name="azure">#007FFF</color>
     <color name="azul">#0070BB</color>
@@ -76,11 +73,24 @@
     <color name="celeste">#B2FFFF</color>
     <color name="electric_blue">#7DF9FF</color>
     <color name="light_cyan">#E0FFFF</color>
-    <color name="amber">#FFBF00</color>
     <color name="canary">#FFEF00</color>
     <color name="gold">#FFD700</color>
     <color name="ivory">#FFFFF0</color>
     <color name="transparent">#00000000</color>
     <color name="celurean_1">#BDE0FE</color>
     <color name="celurean_2">#E3F2FD</color>
+    <color name="pink">#E91E63</color>
+    <color name="teal">#009688</color>
+    <color name="brown">#795548</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="lime">#CDDC39</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="deep_purple">#673AB7</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="amber">#FFC107</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="blue_grey">#607D8B</color>
+    <color name="light_pink">#FFCDD2</color>
+    <color name="light_yellow">#FFF9C4</color>
 </resources>

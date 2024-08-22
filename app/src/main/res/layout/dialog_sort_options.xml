@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroupSortOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha actualizada" />
+
+        <RadioButton
+            android:id="@+id/radioAlphabetical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alfabético" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupSortOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/radioAZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A-Z"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/radioZA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z-A"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/radioNewest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Más nuevo"
+            android:visibility="gone"/>
+
+        <RadioButton
+            android:id="@+id/radioOldest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Más antiguo"
+            android:visibility="gone"/>
+
+    </RadioGroup>
+</LinearLayout>
+

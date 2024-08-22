@@ -109,19 +109,6 @@
 
                </LinearLayout>
 
-        <Button
-            android:id="@+id/google"
-            style="@style/ButtonBase"
-            android:layout_width="wrap_content"
-            android:layout_height="62dp"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/google30"
-            android:text="@string/google"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:cornerRadius="10dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
