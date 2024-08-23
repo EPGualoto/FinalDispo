@@ -14,17 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Top Bar with Profile Icon and App Name -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/topBar"
-            android:layout_width="0dp"
-            android:layout_height="59dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Profile Icon -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profileIcon"
                 android:layout_width="40dp"
@@ -34,17 +33,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666"
                 app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full" />
 
-            <!-- App Name -->
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AppNime"
-                android:fontFamily="@font/aclonica"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:fontFamily="@font/kanit_bold"
+                android:textColor="@android:color/black"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,18 +53,16 @@
                 app:layout_constraintVertical_bias="0.727" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Sort Container -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/sortContainer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="377dp"
+            android:layout_height="35dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/topBar">
 
-            <!-- Order Text View -->
             <TextView
                 android:id="@+id/orderTextView"
                 android:layout_width="wrap_content"
@@ -73,13 +70,12 @@
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/architects_daughter"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Sort Button -->
             <ImageButton
                 android:id="@+id/btnSort"
                 android:layout_width="wrap_content"
@@ -93,7 +89,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- RecyclerView for displaying news -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_recycler_view"
             android:layout_width="0dp"
@@ -104,13 +99,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <!-- Lottie Animation View -->
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_animation_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:lottie_rawRes="@raw/anime1"
+            app:lottie_rawRes="@raw/load"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
