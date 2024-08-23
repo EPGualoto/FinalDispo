@@ -10,18 +10,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gualoto.pfinaldm.R
+import com.gualoto.pfinaldm.databinding.FragmentClubSearchBinding
 import com.gualoto.pfinaldm.ui.adapters.clubs.ClubAdapter
 import com.gualoto.pfinaldm.ui.viewmodels.clubs.ClubSearchViewModel
 
 class ClubSearchFragment : Fragment() {
     private lateinit var viewModel: ClubSearchViewModel
     private lateinit var clubAdapter: ClubAdapter
+    private lateinit var binding: FragmentClubSearchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_club_search, container, false)
+        binding = FragmentClubSearchBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,17 +33,21 @@ class ClubSearchFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ClubSearchViewModel::class.java)
         clubAdapter = ClubAdapter(listOf())
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewClubs)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = clubAdapter
+        binding.recyclerViewClubs.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewClubs.adapter = clubAdapter
 
-        val searchView: SearchView = view.findViewById(R.id.searchViewClubs)
+        val searchView: SearchView = binding.searchViewClubs
+
+        // Mostrar la pantalla de carga
+        binding.lytLoading.lytLoading.visibility = View.VISIBLE
 
         // Cargar todos los clubes al iniciar
         viewModel.getAllClubs()
 
         // Escuchar cambios en el LiveData y actualizar el RecyclerView
         viewModel.clubs.observe(viewLifecycleOwner) { clubs ->
+            // Ocultar la pantalla de carga
+            binding.lytLoading.lytLoading.visibility = View.GONE
             clubAdapter.updateClubs(clubs)
         }
 

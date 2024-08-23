@@ -28,12 +28,10 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
 class NewsFragment : Fragment() {
-
     private lateinit var binding: FragmentNewsBinding
     private var newsAdapter: NewsAdapter? = null
     private val orderViewModel: OrderViewModel by viewModels()
     private lateinit var sharedPreferences: SharedPreferences
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -262,8 +260,8 @@ class NewsFragment : Fragment() {
     }
 
 
-private fun updateProfileIcon() {
-    val profileImageResId = sharedPreferences.getInt("profileImage", R.drawable.ic_profile)
-    binding.profileIcon.setImageResource(profileImageResId)
-}
+    private fun updateProfileIcon() {
+        val profileImageResId = sharedPreferences.getInt("profileImage", R.drawable.ic_profile)
+        binding.profileIcon.setImageResource(profileImageResId)
+    }
 }

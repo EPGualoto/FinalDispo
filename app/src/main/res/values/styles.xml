@@ -32,7 +32,7 @@
         <item name="android:layout_width">180dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_margin">10dp</item>
-        <item name="android:backgroundTint">@color/cerulean</item>
+        <item name="android:backgroundTint">@color/black</item>
         <item name="android:textColor">@color/ivory</item>
         <item name="android:drawableTint">@color/ivory</item>
     </style>

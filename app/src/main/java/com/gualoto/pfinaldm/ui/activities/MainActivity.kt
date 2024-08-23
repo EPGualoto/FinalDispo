@@ -1,6 +1,8 @@
 package com.gualoto.pfinaldm.ui.activities
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -8,6 +10,7 @@ import androidx.core.view.ViewCompat
 import com.gualoto.pfinaldm.R
 import com.gualoto.pfinaldm.databinding.ActivityMainBinding
 import com.gualoto.pfinaldm.databinding.FragmentAnimeGBinding
+import com.gualoto.pfinaldm.ui.fragments.home.HomeFragment
 import com.gualoto.pfinaldm.ui.fragments.main.anime.AnimeGFragment
 import com.gualoto.pfinaldm.ui.fragments.main.anime.SearchFragment
 import com.gualoto.pfinaldm.ui.fragments.main.clubs.ClubSearchFragment
@@ -27,23 +30,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initListeners()
 
+        // Mostrar el fragmento de bienvenida primero
+        showWelcomeFragment()
+    }
 
-        // Cargar el fragmento inicial cambiar con la bienvenida
+    private fun showWelcomeFragment() {
+        // Cargar el fragmento de bienvenida (HomeFragment)
         supportFragmentManager.beginTransaction()
-            .replace(binding.containerFragments.id, PerfilFragment())
+            .replace(binding.containerFragments.id, HomeFragment())
             .commit()
 
-
-        // Configura los Insets para el BottomNavigationView
-        ViewCompat.setOnApplyWindowInsetsListener(binding.bottomNavigation) { view, insets ->
-            insets
-        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            supportFragmentManager.beginTransaction()
+                .replace(binding.containerFragments.id, AnimeGFragment())
+                .commit()
+        }, 4000) // 4000 milisegundos = 4 segundos
     }
 
     private fun initListeners() {
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId){
-                R.id.item1 ->{
+                R.id.item1 -> {
                     val x = supportFragmentManager.beginTransaction()
                     x.replace(binding.containerFragments.id, AnimeGFragment())
                     x.commit()
@@ -67,13 +74,12 @@ class MainActivity : AppCompatActivity() {
                     x.commit()
                     true
                 }
-                R.id.item5 ->{
+                R.id.item5 -> {
                     val x = supportFragmentManager.beginTransaction()
                     x.replace(binding.containerFragments.id, PerfilFragment())
                     x.commit()
                     true
                 }
-
                 else -> false
             }
         }
@@ -110,6 +116,4 @@ class MainActivity : AppCompatActivity() {
         // Configura el modo inmersivo cada vez que la actividad se reanude
         setImmersiveMode()
     }
-
-
 }

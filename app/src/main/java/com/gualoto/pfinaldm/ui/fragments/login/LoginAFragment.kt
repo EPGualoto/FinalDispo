@@ -27,12 +27,10 @@ import com.gualoto.pfinaldm.ui.viewmodels.login.LoginFragmentVM
 import java.util.concurrent.Executor
 
 class LoginAFragment : Fragment() {
-
     private lateinit var binding: FragmentLoginaBinding
     private lateinit var managerUIStates: ManageUIStates
     private val loginFragmentVM: LoginFragmentVM by viewModels()
     private lateinit var auth: FirebaseAuth
-
     private lateinit var sharedPreferences: SharedPreferences
 
     private val sharedPreferencesEditor: SharedPreferences.Editor by lazy {

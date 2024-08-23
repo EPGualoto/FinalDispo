@@ -41,4 +41,19 @@
             app:destination="@id/loginFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.perfil.PerfilFragment"
+        android:label="Perfil">
+        <action
+            android:id="@+id/action_perfilFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.gualoto.pfinaldm.ui.fragments.main.perfil.SettingsFragment"
+        android:label="Ajustes"
+        tools:layout="@layout/fragment_settings" />
+
 </navigation>

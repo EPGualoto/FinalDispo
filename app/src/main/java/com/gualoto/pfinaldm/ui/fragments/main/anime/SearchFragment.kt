@@ -27,7 +27,6 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         sharedPreferences = requireContext().getSharedPreferences("ProfilePrefs", Context.MODE_PRIVATE)
 
         val adapter = AnimePagerAdapter(childFragmentManager, lifecycle)
@@ -47,7 +46,6 @@ class SearchFragment : Fragment() {
                 else -> "Unknown"
             }
         }.attach()
-
         updateProfileIcon() // Actualiza el icono de perfil al cargar el fragmento
     }
 
@@ -55,4 +53,5 @@ class SearchFragment : Fragment() {
         val profileImageResId = sharedPreferences.getInt("profileImage", R.drawable.ic_profile)
         binding.profileIcon.setImageResource(profileImageResId)
     }
+
 }

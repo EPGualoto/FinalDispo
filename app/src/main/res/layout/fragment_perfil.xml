@@ -19,20 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- Fondo de la imagen -->
-            <ImageView
-                android:id="@+id/backgroundImage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/fondoanime3"
-                android:alpha="0.9"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <!-- Vista superpuesta de color negro -->
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
@@ -40,10 +26,8 @@
                 android:background="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtNameJugador"
@@ -64,16 +48,16 @@
                 android:id="@+id/imagePerfil"
                 android:layout_width="111dp"
                 android:layout_height="111dp"
+                android:src="@drawable/ic_profile"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.306"
+                app:layout_constraintHorizontal_bias="0.246"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.512"
+                app:layout_constraintVertical_bias="0.41"
                 app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                android:src="@drawable/ic_profile"
                 app:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
+                app:strokeWidth="2dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="35dp"
@@ -96,6 +80,19 @@
                     android:src="@drawable/photo_camera_24px"
                     app:tint="@color/black" />
             </androidx.cardview.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/settings_24px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toEndOf="@+id/imagePerfil"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.121" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -133,4 +130,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

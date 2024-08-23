@@ -16,7 +16,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AnimeTypeFragment : Fragment() {
-
     private lateinit var binding: FragmentAnimeTypeBinding
     private lateinit var adapter: SearchResultAdapter
     private var animeType: String? = null

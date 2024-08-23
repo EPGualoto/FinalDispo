@@ -3,17 +3,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">Buscar</string>
-    <string name="titulo">AppAnime</string>
-    <string name="intro">¡Saludos, maestro otaku! ¡Es genial tenerte de vuelta!</string>
+    <string name="titulo">AppNime</string>
+    <string name="intro">¡Es genial tenerte de vuelta esperamos que lo disfrutes...!</string>
     <string name="correo">Correo</string>
     <string name="correoEjemplo">example@email.com</string>
     <string name="password">Contraseña</string>
     <string name="botonIngresar">Iniciar sesión</string>
     <string name="conectese">O usa tu cuenta de Google para ingresar</string>
+    <string name="welcome_message">¡Te damos la bienvenida, %1$s!</string>
+    <string name="welcome_subtitle">Un segundo, aumentando niveles de poder...</string>
+    <string name="profile_image">Imagen de perfil</string>
     <string name="sinCuenta">¿No tienes una cuenta?</string>
     <string name="registrese">Crear una cuenta</string>
     <string name="recuperar">Recuperar Contraseña</string>
-    <string name="registrar">Registro</string>
+    <string name="registrar">Registrarse</string>
     <string name="recuperacion">Ingresa tu correo para recuperar tu contraseña</string>
     <string name="registro">¡Bienvenido a Marvel Fans!</string>
     <string name="ingresa1">Ingresa tu correo electrónico:</string>

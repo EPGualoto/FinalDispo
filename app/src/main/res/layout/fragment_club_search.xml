@@ -10,49 +10,58 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
+        android:layout_width="376dp"
+        android:layout_height="59dp"
+        android:background="@color/black"
         android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/clubName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="93dp"
+            android:fontFamily="@font/aclonica"
             android:text="AppNime"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintHorizontal_bias="0.187"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.727" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <SearchView
         android:id="@+id/searchViewClubs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Buscar clubs"
-        android:background="@drawable/search_view_background" />
+        android:background="@drawable/search_view_background"
+        android:queryHint="Buscar clubs" />
 
     <TextView
         android:id="@+id/clubActive"
         android:layout_width="379dp"
         android:layout_height="42dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:text="Clubs Activos Recientes"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewClubs"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-</LinearLayout>
 
+    <include
+        android:id="@+id/lytLoading"
+        layout="@layout/load_layout"
+        android:visibility="gone" />
+</LinearLayout>
