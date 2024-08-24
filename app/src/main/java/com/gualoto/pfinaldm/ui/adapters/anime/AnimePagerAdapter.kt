@@ -10,16 +10,24 @@ import com.gualoto.pfinaldm.ui.fragments.main.anime.AnimeTypeFragment
 class AnimePagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
-    private val animeTypes = listOf("tv", "movie", "ova", "special", "ona", "music", "cm", "pv", "tv_special")
+    private var animeType: String? = null
 
-    override fun getItemCount(): Int = animeTypes.size
+    override fun getItemCount(): Int = 1
 
     override fun createFragment(position: Int): Fragment {
         val fragment = AnimeTypeFragment()
         val args = Bundle()
-        args.putString("anime_type", animeTypes[position])
+        if (animeType != null) {
+            args.putString("anime_type", animeType)
+        }
         fragment.arguments = args
         return fragment
     }
+
+    fun updateAnimeType(type: String?) {
+        animeType = type
+        notifyDataSetChanged()
+    }
 }
+
 

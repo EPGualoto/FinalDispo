@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/fondoanime3">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="382dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo1" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Qué es MANGA Plus by SHUEISHA?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:id="@+id/textViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Luffy, Goku, Naruto, Deku, Tanjiro... Hasta el día de hoy, muchos héroes han nacido del manga japonés. En el momento en que se publica el último capítulo, los lectores japoneses quedan encantados con el desempeño de sus héroes y comparten sus impresiones con sus amigos. Nosotros queremos compartir las hazañas de estos héroes con lectores de todo el mundo, y 'MANGA Plus by SHUEISHA' es el lugar ideal para ello."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+</LinearLayout>

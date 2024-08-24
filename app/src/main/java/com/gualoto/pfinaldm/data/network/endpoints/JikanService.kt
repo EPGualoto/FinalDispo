@@ -13,4 +13,10 @@ interface JikanService {
 
     @GET("anime")
     fun searchAnimeType(@Query("type") type: String, @Query("page") page: Int): Call<SearchAnimeApi>
+
+    @GET("anime")
+    fun searchAllAnimeTypes(
+        @Query("page") page: Int
+    ): Call<SearchAnimeApi>
+
 }

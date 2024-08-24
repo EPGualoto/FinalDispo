@@ -26,7 +26,7 @@
                 android:id="@+id/profileIcon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:src="@drawable/account_circle_24px"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,17 +38,17 @@
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AppNime"
                 android:fontFamily="@font/kanit_bold"
+                android:text="AppNime"
                 android:textColor="@android:color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintHorizontal_bias="0.358"
                 app:layout_constraintStart_toEndOf="@+id/profileIcon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.727" />
+                app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Search Bar -->

@@ -1,15 +1,31 @@
 package com.gualoto.pfinaldm.data.network.repository
 import com.gualoto.pfinaldm.data.network.endpoints.JikanService
+import com.gualoto.pfinaldm.data.network.entities.busqueda.anime.SearchAnimeApi
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Query
 
+interface RetrofitClient {
+    @GET("anime")
+    fun searchAnimeType(
+        @Query("type") type: String?,
+        @Query("page") page: Int
+    ): Call<SearchAnimeApi>
 
-object RetrofitClient {
-    private const val BASE_URL = "https://api.jikan.moe/v4/"
+    @GET("anime")
+    fun searchAllAnimeTypes(
+        @Query("page") page: Int
+    ): Call<SearchAnimeApi>
 
-    val instance: JikanService by lazy {
-        retrofit2.Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())
-            .build()
-            .create(JikanService::class.java)
+    companion object {
+        val instance: RetrofitClient by lazy {
+            Retrofit.Builder()
+                .baseUrl("https://api.jikan.moe/v4/")  // Asegúrate de poner la URL correcta
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(RetrofitClient::class.java)
+        }
     }
 }

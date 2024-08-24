@@ -42,22 +42,26 @@ class AnimeTypeFragment : Fragment() {
     }
 
     private fun fetchResults() {
-        animeType?.let {
-            RetrofitClient.instance.searchAnimeType(it, 1).enqueue(object : Callback<SearchAnimeApi> {
-                override fun onResponse(call: Call<SearchAnimeApi>, response: Response<SearchAnimeApi>) {
-                    if (response.isSuccessful) {
-                        val resultList = response.body()?.data ?: emptyList()
-                        adapter.submitList(resultList)
-                    } else {
-                        showNoResultsDialog()
-                    }
-                }
+        val call = if (animeType == null) {
+            RetrofitClient.instance.searchAllAnimeTypes(1)
+        } else {
+            RetrofitClient.instance.searchAnimeType(animeType!!, 1)
+        }
 
-                override fun onFailure(call: Call<SearchAnimeApi>, t: Throwable) {
+        call.enqueue(object : Callback<SearchAnimeApi> {
+            override fun onResponse(call: Call<SearchAnimeApi>, response: Response<SearchAnimeApi>) {
+                if (response.isSuccessful) {
+                    val resultList = response.body()?.data ?: emptyList()
+                    adapter.submitList(resultList)
+                } else {
                     showNoResultsDialog()
                 }
-            })
-        }
+            }
+
+            override fun onFailure(call: Call<SearchAnimeApi>, t: Throwable) {
+                showNoResultsDialog()
+            }
+        })
     }
 
     private fun showNoResultsDialog() {

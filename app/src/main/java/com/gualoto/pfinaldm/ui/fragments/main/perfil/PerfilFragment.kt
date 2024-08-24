@@ -12,16 +12,17 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.gualoto.pfinaldm.R
 import com.gualoto.pfinaldm.databinding.FragmentPerfilBinding
-import com.gualoto.pfinaldm.ui.adapters.ViewPagerAdapter2
+import com.gualoto.pfinaldm.ui.adapters.perfil.ViewPagerAdapter2
 import android.content.Context
 import android.content.SharedPreferences
+import android.widget.GridView
+import com.gualoto.pfinaldm.ui.adapters.perfil.ImageSelectionAdapter
 
 class PerfilFragment : Fragment() {
     private lateinit var binding: FragmentPerfilBinding
     private lateinit var auth: FirebaseAuth
     private val firestore: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
     private lateinit var sharedPreferences: SharedPreferences
-
     private var selectedProfileImage: Int = R.drawable.ic_profile
 
     override fun onCreateView(
@@ -37,12 +38,24 @@ class PerfilFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         sharedPreferences = requireContext().getSharedPreferences("ProfilePrefs", Context.MODE_PRIVATE)
 
+        // Carga la imagen de perfil seleccionada previamente
         selectedProfileImage = sharedPreferences.getInt("profileImage", R.drawable.ic_profile)
         binding.imagePerfil.setImageResource(selectedProfileImage)
 
+        // Carga el perfil de usuario desde Firestore
         loadUserProfile()
+
+        // Configura el ViewPager y las pestañas
         setupViewPagerAndTabs()
+
+        // Configura el botón para editar la imagen de perfil
         setupEditProfileImageButton()
+
+        // Configura el botón para mostrar el diálogo de información
+        binding.btnSettings.setOnClickListener {
+            val dialogFragment = InfoDialogFragment()
+            dialogFragment.show(parentFragmentManager, "infoDialog")
+        }
     }
 
     private fun loadUserProfile() {
@@ -96,23 +109,30 @@ class PerfilFragment : Fragment() {
     }
 
     private fun showImageSelectionDialog() {
-        val images = arrayOf(R.drawable.perfil1, R.drawable.perfil2, R.drawable.perfil3)
+        val images = arrayOf(
+            R.drawable.perfil1, R.drawable.perfil2, R.drawable.perfil3,
+            R.drawable.perfil4, R.drawable.perfil5, R.drawable.perfil6,
+            R.drawable.perfil7, R.drawable.perfil8, R.drawable.perfil9,
+            R.drawable.perfil10
+        )
+        var selectedPosition = images.indexOf(selectedProfileImage)
+
+        val adapter = ImageSelectionAdapter(requireContext(), images, selectedPosition) { selectedImage ->
+            selectedProfileImage = selectedImage
+        }
+
+        val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_image_selection, null)
+        val gridView = dialogView.findViewById<GridView>(R.id.gridView)
+        gridView.adapter = adapter
 
         AlertDialog.Builder(requireContext())
-            .setTitle("Selecciona una imagen de perfil")
-            .setItems(arrayOf("Imagen perfil 1", "Imagen perfil 2", "Imagen perfil 3")) { _, which ->
-                selectedProfileImage = images[which]
+            .setView(dialogView)
+            .setPositiveButton("Aceptar") { _, _ ->
                 binding.imagePerfil.setImageResource(selectedProfileImage)
-
-                sharedPreferences.edit()
-                    .putInt("profileImage", selectedProfileImage)
-                    .apply()
+                sharedPreferences.edit().putInt("profileImage", selectedProfileImage).apply()
             }
+            .setNegativeButton("Cancelar", null)
             .create()
             .show()
-    }
-
-    fun setCurrentTab(tabIndex: Int) {
-        binding.lytEstadisticas.currentItem = tabIndex
     }
 }
