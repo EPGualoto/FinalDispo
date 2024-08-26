@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
+        android:fontFamily="@font/aclonica"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -19,7 +20,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_image" />
+        android:src="@drawable/fondoanim2" />
 
     <LinearLayout
         android:layout_width="match_parent"

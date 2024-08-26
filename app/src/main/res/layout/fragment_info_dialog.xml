@@ -1,29 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/fondoanime3">
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundfondo"
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="382dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/logo1" />
-
-    <TextView
-        android:id="@+id/textViewTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿Qué es MANGA Plus by SHUEISHA?"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Luffy, Goku, Naruto, Deku, Tanjiro... Hasta el día de hoy, muchos héroes han nacido del manga japonés. En el momento en que se publica el último capítulo, los lectores japoneses quedan encantados con el desempeño de sus héroes y comparten sus impresiones con sus amigos. Nosotros queremos compartir las hazañas de estos héroes con lectores de todo el mundo, y 'MANGA Plus by SHUEISHA' es el lugar ideal para ello."
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-</LinearLayout>
+        <!-- Primera imagen -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="340dp"
+            android:layout_height="340dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@drawable/logo1"
+            android:visibility="visible" />
+
+        <!-- Fila de imágenes pequeñas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/info1"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/info2"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/info4"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/info3"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/info5"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <!-- Título y contenido de texto -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Qué es AppNime?"
+            android:layout_marginTop="10dp"
+            android:textSize="35sp"
+            android:fontFamily="@font/aclonica"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <TextView
+            android:id="@+id/textViewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:text="Luffy, Goku, Naruto, Deku, Tanjiro... Estos nombres son sinónimo de los animes que han dejado una huella imborrable en la cultura popular. En Appnime, desarrollada por Erika Gualoto y Juan Toscano, te ofrecemos una experiencia completa para explorar a fondo los animes más icónicos. Nuestra aplicación te permite acceder a detalles como el tipo de anime, género, ranking, puntuación, popularidad, trailers (cuando están disponibles), estado de emisión, número de seguidores, nombre del anime, cantidad de episodios y duración de cada uno. Además, te conectamos con clubs dedicados a diferentes aspectos del mundo del anime, como cosplay, debates y mucho más. Únete a Appnime y comparte tu pasión por el anime en todas sus formas con una comunidad global de fanáticos."
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </LinearLayout>
+</ScrollView>
