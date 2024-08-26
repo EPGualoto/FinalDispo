@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.gualoto.pfinaldm.databinding.ItemAnimegBinding
 import com.gualoto.pfinaldm.ui.core.TopAnimeUI
 
-class TopAnimeAdapter : ListAdapter<TopAnimeUI, TopAnimeAdapter.TopAnimeViewHolder>(TopAnimeDiffCallback()) {
+class TopAnimeAdapter(private val onClickAction: (TopAnimeUI) -> Unit) : ListAdapter<TopAnimeUI, TopAnimeAdapter.TopAnimeViewHolder>(TopAnimeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopAnimeViewHolder {
         val binding = ItemAnimegBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,16 +17,22 @@ class TopAnimeAdapter : ListAdapter<TopAnimeUI, TopAnimeAdapter.TopAnimeViewHold
     }
 
     override fun onBindViewHolder(holder: TopAnimeViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickAction)
     }
 
     class TopAnimeViewHolder(private val binding: ItemAnimegBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(anime: TopAnimeUI) {
+
+        fun bind(anime: TopAnimeUI, onClickAction: (TopAnimeUI) -> Unit) {
             binding.animeTitle.text = anime.title
             Glide.with(binding.animeImage.context)
                 .load(anime.imageUrl)
                 .into(binding.animeImage)
+
+            itemView.setOnClickListener {
+                onClickAction(anime)
+            }
         }
+
     }
 
     class TopAnimeDiffCallback : DiffUtil.ItemCallback<TopAnimeUI>() {

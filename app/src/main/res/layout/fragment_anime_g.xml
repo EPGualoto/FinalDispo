@@ -80,11 +80,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewSeasonNow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/titleSeasonNow"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_animeg"/>
 
         <TextView
             android:id="@+id/titleTopAnime"
@@ -103,11 +104,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewTopAnime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
+            android:orientation="vertical"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/titleTopAnime"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_animeg"/>
 
         <TextView
             android:id="@+id/titleSeasonUpcoming"
@@ -125,11 +128,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewSeasonUAnime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/titleSeasonUpcoming"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_animeg"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

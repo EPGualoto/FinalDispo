@@ -1,22 +1,21 @@
 package com.gualoto.pfinaldm.ui.fragments.main.perfil
 
 import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.tabs.TabLayoutMediator
-
+import android.widget.GridView
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.gualoto.pfinaldm.R
 import com.gualoto.pfinaldm.databinding.FragmentPerfilBinding
-import com.gualoto.pfinaldm.ui.adapters.perfil.ViewPagerAdapter2
-import android.content.Context
-import android.content.SharedPreferences
-import android.widget.GridView
 import com.gualoto.pfinaldm.ui.adapters.perfil.ImageSelectionAdapter
+import com.gualoto.pfinaldm.ui.fragments.login.LoginAFragment
 
 class PerfilFragment : Fragment() {
     private lateinit var binding: FragmentPerfilBinding
@@ -45,8 +44,7 @@ class PerfilFragment : Fragment() {
         // Carga el perfil de usuario desde Firestore
         loadUserProfile()
 
-        // Configura el ViewPager y las pestañas
-        setupViewPagerAndTabs()
+
 
         // Configura el botón para editar la imagen de perfil
         setupEditProfileImageButton()
@@ -55,6 +53,13 @@ class PerfilFragment : Fragment() {
         binding.btnSettings.setOnClickListener {
             val dialogFragment = InfoDialogFragment()
             dialogFragment.show(parentFragmentManager, "infoDialog")
+        }
+
+        //Cerrar sesion
+        binding.btnSignOut.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(requireContext(), LoginAFragment::class.java)
+            startActivity(intent)
         }
     }
 
@@ -76,19 +81,7 @@ class PerfilFragment : Fragment() {
         }
     }
 
-    private fun setupViewPagerAndTabs() {
-        val viewPagerAdapter = ViewPagerAdapter2(requireActivity())
-        binding.lytEstadisticas.adapter = viewPagerAdapter
 
-        // Configura el TabLayout con el ViewPager2
-        TabLayoutMediator(binding.tabLayout, binding.lytEstadisticas) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Favoritos"
-                1 -> "Recientes"
-                else -> throw IllegalStateException("Unexpected position $position")
-            }
-        }.attach()
-    }
 
     private fun setupEditProfileImageButton() {
         binding.btnEditProfileImage.setOnClickListener {

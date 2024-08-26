@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.gualoto.pfinaldm.databinding.ItemAnimegBinding
 import com.gualoto.pfinaldm.ui.core.SeasonUAnimeUI
 
-class SeasonUGAdapter : ListAdapter<SeasonUAnimeUI, SeasonUGAdapter.AnimeViewHolder>(
+class SeasonUGAdapter(private val onClickAction: (SeasonUAnimeUI) -> Unit) : ListAdapter<SeasonUAnimeUI, SeasonUGAdapter.AnimeViewHolder>(
     AnimeDiffCallback()
 ) {
 
@@ -19,15 +19,19 @@ class SeasonUGAdapter : ListAdapter<SeasonUAnimeUI, SeasonUGAdapter.AnimeViewHol
     }
 
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickAction)
     }
 
     class AnimeViewHolder(private val binding: ItemAnimegBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: SeasonUAnimeUI) {
+        fun bind(data: SeasonUAnimeUI, onClickAction: (SeasonUAnimeUI) -> Unit) {
             binding.animeTitle.text = data.title
             Glide.with(binding.animeImage.context)
                 .load(data.imageUrl)
                 .into(binding.animeImage)
+
+            itemView.setOnClickListener {
+                onClickAction(data)
+            }
         }
     }
 
