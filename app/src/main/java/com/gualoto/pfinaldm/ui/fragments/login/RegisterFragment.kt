@@ -21,7 +21,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class RegisterFragment : Fragment() {
-
     private lateinit var binding: FragmentRegisterBinding
     private val registerFragmentVM: RegisterFragmentVM by viewModels()
     private lateinit var managerUIStates: ManageUIStates

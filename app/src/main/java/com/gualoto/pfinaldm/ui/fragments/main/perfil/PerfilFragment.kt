@@ -44,8 +44,6 @@ class PerfilFragment : Fragment() {
         // Carga el perfil de usuario desde Firestore
         loadUserProfile()
 
-
-
         // Configura el botón para editar la imagen de perfil
         setupEditProfileImageButton()
 

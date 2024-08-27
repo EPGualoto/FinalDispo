@@ -51,18 +51,6 @@
                 app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Search Bar -->
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchBar"
-            android:layout_width="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search_view_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topBar" />
-
-
         <!-- Section Title: Animes populares -->
         <TextView
             android:id="@+id/titleSeasonNow"
@@ -74,7 +62,7 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/searchBar"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView

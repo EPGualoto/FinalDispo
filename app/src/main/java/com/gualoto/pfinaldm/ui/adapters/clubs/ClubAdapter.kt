@@ -15,7 +15,6 @@ import com.gualoto.pfinaldm.R
 import com.gualoto.pfinaldm.ui.fragments.main.clubs.ClubDetailFragment
 
 class ClubAdapter(private var clubs: List<Data>) : RecyclerView.Adapter<ClubAdapter.ClubViewHolder>() {
-
     class ClubViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val clubName: TextView = view.findViewById(R.id.clubName)
         val clubDescription: TextView = view.findViewById(R.id.clubDescription)

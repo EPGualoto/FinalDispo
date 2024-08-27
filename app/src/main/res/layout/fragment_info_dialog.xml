@@ -94,7 +94,28 @@
             android:textSize="15dp"
             android:textColor="@color/black"
             android:text="Luffy, Goku, Naruto, Deku, Tanjiro... Estos nombres son sinónimo de los animes que han dejado una huella imborrable en la cultura popular. En Appnime, desarrollada por Erika Gualoto y Juan Toscano, te ofrecemos una experiencia completa para explorar a fondo los animes más icónicos. Nuestra aplicación te permite acceder a detalles como el tipo de anime, género, ranking, puntuación, popularidad, trailers (cuando están disponibles), estado de emisión, número de seguidores, nombre del anime, cantidad de episodios y duración de cada uno. Además, te conectamos con clubs dedicados a diferentes aspectos del mundo del anime, como cosplay, debates y mucho más. Únete a Appnime y comparte tu pasión por el anime en todas sus formas con una comunidad global de fanáticos."
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:justificationMode="inter_word" />
+
+        <!-- Información de la versión y autores -->
+        <TextView
+            android:id="@+id/textViewVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Versión 1.0"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textViewAuthors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hecho por: Erika Gualoto y Juan Toscano"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 </ScrollView>
